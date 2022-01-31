@@ -18,7 +18,7 @@ YELLOW_BOX: str = "\U0001F7E8"
 
 i: int = 0
 
-i2:int = 0
+i2: int = 0
 # i2 is the index in the secret word only, and is used to see if character i is located in another index
 
 resulting_emojis = ""
@@ -32,7 +32,7 @@ while i < len(guess):
         character_in_word = True
     else:
         while (i2 < len(guess) and not character_in_word):
-            # loop to check each letter of secret word to find if there should be yellow squares
+            # loop to check each letter of secret word and find if there should be yellow squares
             if guess[i] == secret_word[i2]:
                 resulting_emojis += f"{YELLOW_BOX}"
                 character_in_word: bool = True
