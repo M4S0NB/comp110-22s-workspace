@@ -49,7 +49,7 @@ def input_guess(expected_length: int) -> str:
 
     # Prompts you to retry if your guess wasn't the correct length
     while len(word_guess) != expected_length:
-        word_guess: str = input(f"That wasn't {expected_length} chars! Try again: ")
+        word_guess = input(f"That wasn't {expected_length} chars! Try again: ")
 
     return word_guess
 
