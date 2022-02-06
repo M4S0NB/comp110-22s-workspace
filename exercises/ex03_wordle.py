@@ -47,9 +47,9 @@ def input_guess(expected_length: int) -> str:
     """Prompts the user to give a correct length guess."""
     word_guess: str = input(f"Enter a {expected_length} character word: ")
 
+    # Prompts you to retry if your guess wasn't the correct length
     while len(word_guess) != expected_length:
-        print(f"that was not {expected_length} chars! Try again: ")
-        word_guess = input()
+        word_guess: str = input(f"That wasn't {expected_length} chars! Try again: ")
 
     return word_guess
 
@@ -61,6 +61,7 @@ def main() -> None:
     secret_word: str = "codes"
     out_of_turns: bool = False
 
+    # gives you multiple turns
     while (not won_game) and (not out_of_turns):
         print(f"=== Turn {turn_number}/6 ===")
         guess: str = input_guess(len(secret_word))
