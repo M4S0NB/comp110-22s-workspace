@@ -4,6 +4,7 @@ __author__ = "730481220"
 
 
 def invert(original_dict: dict[str, str]) -> dict[str, str]:
+    """Inverts the keys and values of a dictionary."""
     new_dict: dict[str, str] = dict()
     for key in original_dict:
         if original_dict[key] in new_dict:
@@ -12,10 +13,8 @@ def invert(original_dict: dict[str, str]) -> dict[str, str]:
     return new_dict
 
 
-print(invert({'kris': 'jordan', 'bruh': 'moment'}))
-
-
 def count(original_list: list[str]) -> dict[str, int]:
+    """Counts how many time each entry of a list exists."""
     new_dictionary: dict[str, int] = dict()
     for item in original_list:
         if item in new_dictionary:
@@ -26,7 +25,8 @@ def count(original_list: list[str]) -> dict[str, int]:
 
 
 def favorite_color(peoples_favorite_colors: dict[str, str]) -> str:
-    colors_list: list = list()
+    """Picks the most common value in a dictionary."""
+    colors_list: list[str] = list()
     for item in peoples_favorite_colors:
         colors_list.append(peoples_favorite_colors[item])
     color_counts: dict[str, int] = count(colors_list)
@@ -35,6 +35,3 @@ def favorite_color(peoples_favorite_colors: dict[str, str]) -> str:
         if color_counts[color] > color_counts[favorite]:
             favorite = color
     return favorite
-
-
-print(favorite_color({"mason": "yellow", "ashley": "yellow", "maddie": "yellow", "dean": "blue", "rikki": "blue"}))
